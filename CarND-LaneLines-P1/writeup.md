@@ -12,7 +12,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[solidYellowCurveResult]: ./test_images/output_solidYellowCurve.jpg "Solid Yellow Curve Result"
+ [whiteCarLaneSwitchResult]: ./test_images/output_whiteCarLaneSwitch.jpg "While Car Lane Switch Result"
+ [solidWhiteCurveResult]: ./test_images/output_solidWhiteCurve.jpg "Solid White Curve Result"
+ [solidYellowLeftResult]: ./test_images/output_solidYellowLeft.jpg "Solid Yellow Left Result"
+ [solidWhiteRightResult]: ./test_images/output_solidWhiteRight.jpg "Solid White Line"
+
+
 
 ---
 
@@ -30,7 +36,7 @@ After this I used hough transform to detect lines in the image I set the hyper p
     min_line_length = 5
     max_line_gap = 20 
 `
-I then drew the lines on top of the image.
+After all of this then I drew the lines on top of the image.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by filtering the lines
 into left lines and right lines in seperate lists based on the slope which I calculated based on the two points for each line.
@@ -38,16 +44,16 @@ If the slope was positive it went in the right if it was negative it went in the
 I then had one line for the left and one for the right. I then caluated both lines intercepts with y equal to two-thirds of the screen and the bottom of the screen. I then drew the left and right lines between those two intercepts for each line. 
 
 Below you can find the images I generated of the pipeline running.
-![solidYellowCurve Result][test_images/output_solidYellowCurve.jpg]
+![solidYellowCurve Result][solidYellowCurveResult]
 
- ![whiteCarLaneSwitch Result][test_images/output_whiteCarLaneSwitch.jpg]
+ ![whiteCarLaneSwitch Result][whiteCarLaneSwitchResult]
 
 
- ![solidWhiteCurve Result][test_images/output_solidWhiteCurve.jpg]
+ ![solidWhiteCurve Result][solidWhiteCurveResult]
 
- ![solidYellowLeft Result][test_images/output_solidYellowLeft.jpg]
+ ![solidYellowLeft Result][solidYellowLeftResult]
 
- ![solidWhiteRight Result][test_images/output_solidWhiteRight.jpg]
+ ![solidWhiteRight Result][solidWhiteRightResult]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
